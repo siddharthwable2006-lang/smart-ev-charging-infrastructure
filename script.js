@@ -878,3 +878,30 @@ gridVoltage=data.gridVoltage;
 gridCurrent=data.gridCurrent;
 
 });
+const g2vBtn = document.getElementById("g2vBtn");
+const v2gBtn = document.getElementById("v2gBtn");
+const modeStatus = document.getElementById("modeStatus");
+
+g2vBtn.onclick = function(){
+
+    g2vBtn.classList.add("active");
+    v2gBtn.classList.remove("active");
+
+    modeStatus.innerHTML = "Grid → Vehicle Charging";
+
+    document.getElementById("gridImport").innerHTML="2.54 kW";
+    document.getElementById("gridExport").innerHTML="0.00 kW";
+
+}
+
+v2gBtn.onclick = function(){
+
+    v2gBtn.classList.add("active");
+    g2vBtn.classList.remove("active");
+
+    modeStatus.innerHTML = "Vehicle → Grid Power Supply";
+
+    document.getElementById("gridImport").innerHTML="0.00 kW";
+    document.getElementById("gridExport").innerHTML="3.42 kW";
+
+}
