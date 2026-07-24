@@ -1575,3 +1575,36 @@ transform:translateY(-5px);
 box-shadow:0 0 20px cyan;
 
 }
+.mode-card{
+    text-align:center;
+}
+
+.mode-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin:20px 0;
+}
+
+.mode{
+    border:none;
+    padding:12px 30px;
+    border-radius:30px;
+    background:#2b3245;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.mode.active{
+    background:#00d4ff;
+    color:#111;
+    box-shadow:0 0 20px #00d4ff;
+}
+
+#modeStatus{
+    font-size:18px;
+    color:#00ff95;
+    font-weight:600;
+}
