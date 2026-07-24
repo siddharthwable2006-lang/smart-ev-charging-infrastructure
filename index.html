@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Energy Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- NAVBAR -->
+    <!-- ========================= -->
+
+    <nav>
+
+        <div class="logo">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            <h2>Smart Energy Dashboard</h2>
+
+        </div>
+
+        <ul>
+
+            <li><a href="#">Dashboard</a></li>
+
+            <li><a href="#">Battery</a></li>
+
+            <li><a href="#">Solar</a></li>
+
+            <li><a href="#">Grid</a></li>
+
+            <li><a href="#">Analytics</a></li>
+
+        </ul>
+
+        <div class="online">
+
+            <i class="fa-solid fa-circle"></i>
+
+            Online
+
+        </div>
+
+    </nav>
+
+
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
+
+    <section class="header">
+
+        <div>
+
+            <h1>
+
+                AI Enabled Smart Energy Management System
+
+            </h1>
+
+            <p>
+
+                Grid to Vehicle (G2V) | Vehicle to Grid (V2G)
+
+            </p>
+
+        </div>
+
+        <div class="time">
+
+            <h3 id="date">18 July 2026</h3>
+
+            <h2 id="clock">00:00:00</h2>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- DASHBOARD CARDS -->
+    <!-- ========================= -->
+
+    <section class="dashboard">
+
+        <!-- Battery Health -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-car-battery"></i>
+
+            <h3>Battery Health</h3>
+
+            <h1 id="batteryHealth">98%</h1>
+
+            <p>State of Health</p>
+
+        </div>
+
+        <!-- SOC -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-battery-three-quarters"></i>
+
+            <h3>Battery SOC</h3>
+
+            <h1 id="batterySOC">82%</h1>
+
+            <p>State of Charge</p>
+
+        </div>
+
+        <!-- Temperature -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-temperature-three-quarters"></i>
+
+            <h3>Battery Temp</h3>
+
+            <h1 id="batteryTemp">32°C</h1>
+
+            <p>Battery Temperature</p>
+
+        </div>
+
+        <!-- Charging -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-charging-station"></i>
+
+            <h3>Charging Power</h3>
+
+            <h1 id="chargingPower">5.8 kW</h1>
+
+            <p>EV Charging</p>
+
+        </div>
+
+        <!-- Solar -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-solar-panel"></i>
+
+            <h3>Solar Generation</h3>
+
+            <h1 id="solarPower">3.5 kW</h1>
+
+            <p>Current Output</p>
+
+        </div>
+
+        <!-- Solar Today -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-sun"></i>
+
+            <h3>Today's Solar</h3>
+
+            <h1 id="solarEnergy">15.8 kWh</h1>
+
+            <p>Energy Generated</p>
+
+        </div>
+
+        <!-- Grid -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-plug-circle-bolt"></i>
+
+            <h3>Grid Voltage</h3>
+
+            <h1 id="gridVoltage">230 V</h1>
+
+            <p>Supply Voltage</p>
+
+        </div>
+
+        <!-- Current -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            <h3>Grid Current</h3>
+
+            <h1 id="gridCurrent">18 A</h1>
+
+            <p>Current</p>
+
+        </div>
+
+        <!-- Power -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-gauge-high"></i>
+
+            <h3>Power</h3>
+
+            <h1 id="gridPower">4.15 kW</h1>
+
+            <p>Real Time Power</p>
+
+        </div>
+
+        <!-- Energy -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-chart-column"></i>
+
+            <h3>Energy</h3>
+
+            <h1 id="energy">25.8 kWh</h1>
+
+            <p>Today's Consumption</p>
+
+        </div>
+
+        <!-- Electricity Cost -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+
+            <h3>Electricity Cost</h3>
+
+            <h1 id="cost">₹208</h1>
+
+            <p>Today's Cost</p>
+
+        </div>
+
+        <!-- Tariff -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-money-bill"></i>
+
+            <h3>Current Tariff</h3>
+
+            <h1 id="tariff">₹8.10</h1>
+
+            <p>per kWh</p>
+
+        </div>
+
+        <!-- Savings -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-piggy-bank"></i>
+
+            <h3>Money Saved</h3>
+
+            <h1 id="saving">₹64</h1>
+
+            <p>Using Solar</p>
+
+        </div>
+
+        <!-- CO2 -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-leaf"></i>
+
+            <h3>CO₂ Saved</h3>
+
+            <h1 id="co2">18.4 kg</h1>
+
+            <p>Carbon Reduction</p>
+
+        </div>
+
+        <!-- Mode -->
+
+        <div class="card mode">
+
+            <h3>Charging Mode</h3>
+
+            <button id="modeBtn">
+
+                G2V
+
+            </button>
+
+            <p>
+
+                Grid → Vehicle
+
+            </p>
+
+        </div>
+
+        <!-- Grid Import -->
+
+        <div class="card">
+
+            <h3>Grid Import</h3>
+
+            <h1 id="gridImport">2.4 kW</h1>
+
+            <p>Imported Power</p>
+
+        </div>
+
+        <!-- Grid Export -->
+
+        <div class="card">
+
+            <h3>Grid Export</h3>
+
+            <h1 id="gridExport">1.3 kW</h1>
+
+            <p>V2G Output</p>
+
+        </div>
+
+    </section>
+
+    <!-- ====================================== -->
+    <!-- POWER FLOW (Animation in JS Later) -->
+    <!-- ====================================== -->
+
+    <section class="power-flow">
+
+        <h2>
+
+            Live Power Flow
+
+        </h2>
+
+        <div class="flow">
+
+            <div>
+
+                <i class="fa-solid fa-solar-panel"></i>
+
+                <p>Solar</p>
+
+            </div>
+
+            <div class="arrow">➡</div>
+
+            <div>
+
+                <i class="fa-solid fa-car-battery"></i>
+
+                <p>Battery</p>
+
+            </div>
+
+            <div class="arrow">➡</div>
+
+            <div>
+
+                <i class="fa-solid fa-charging-station"></i>
+
+                <p>EV Charger</p>
+
+            </div>
+
+            <div class="arrow">⬌</div>
+
+            <div>
+
+                <i class="fa-solid fa-car"></i>
+
+                <p>EV</p>
+
+            </div>
+
+            <div class="arrow">⬌</div>
+
+            <div>
+
+                <i class="fa-solid fa-plug-circle-bolt"></i>
+
+                <p>Grid</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ====================================== -->
+    <!-- Charts (Part 2) -->
+    <!-- ====================================== -->
+
+    <section class="charts">
+
+        <div class="chart-box">
+
+            <canvas id="powerChart"></canvas>
+
+        </div>
+
+        <div class="chart-box">
+
+            <canvas id="energyChart"></canvas>
+
+        </div>
+
+        <div class="chart-box">
+
+            <canvas id="solarChart"></canvas>
+
+        </div>
+
+        <div class="chart-box">
+
+            <canvas id="costChart"></canvas>
+
+        </div>
+
+    </section>
+
+    <!-- JS -->
+
+    <script src="script.js"></script>
+	<div class="action-buttons">
+
+    <button id="themeBtn">
+        🌙 Theme
+    </button>
+
+    <button id="downloadCSV">
+        📊 Export CSV
+    </button>
+
+    <button id="printReport">
+        📄 Print Report
+    </button>
+
+</div>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+
+<script src="firebase.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
